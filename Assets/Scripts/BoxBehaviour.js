@@ -1,13 +1,15 @@
 ﻿#pragma strict
 
-var life:int = 1;
-
 function Start () {
 
 }
 
 function Update () {
-  life++;
+
+  if (gameObject.transform.position.y <= -500) {
+    destroyer(gameObject, 1);
+  }
+
 }
 
 function OnCollisionEnter(collision:Collision) {
@@ -22,10 +24,10 @@ function OnCollisionEnter(collision:Collision) {
 
 }
 
-function destroyer(obj:GameObject, sec:int){
-  var time:int = sec;
-
-
-
-  Destroy(obj, sec);
+function destroyer(obj:GameObject, sec:int) {
+  yield WaitForSeconds(sec);
+  obj.animation.Play('fadeOut');
+  yield WaitForSeconds(2);
+  Destroy(obj);
+  // Debug.Log(obj.name + " has been destroyed!");
 }
