@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-var target:Transform;
+var target : Transform;
 
 function Start () {
 
@@ -8,5 +8,5 @@ function Start () {
 
 function Update () {
   transform.LookAt(target);
-  transform.Translate(Vector3.right * Time.deltaTime*20);
+  transform.Translate(Vector3.right * Time.deltaTime * 20);
 }

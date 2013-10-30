@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
-var PrefabBox:GameObject;
-var Loc:Vector3;
+var PrefabBox : GameObject;
+var Loc : Vector3;
 
 function Start () {
 
@@ -19,6 +19,6 @@ function Update () {
 
 } // end Update
 
-function spawner(obj:GameObject, Loc:Vector3){
+function spawner(obj : GameObject, Loc : Vector3){
   Instantiate (obj, Loc, Quaternion.identity);
 }
